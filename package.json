@@ -1,6 +1,6 @@
 {
   "name": "@chatfoodio/vue-currency",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Vue currency filter",
   "author": "Gustavo Bissolli <gustavo.bissolli@gmail.com>",
   "main": "./dist/vue-currency.js",
