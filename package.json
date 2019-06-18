@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Vue currency filter",
   "author": "Gustavo Bissolli <gustavo.bissolli@gmail.com>",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
@@ -14,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/chatfood/vue-currency.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chatfood/vue-currency/issues"
   },
