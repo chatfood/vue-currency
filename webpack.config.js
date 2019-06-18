@@ -9,7 +9,7 @@ let config = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "build.js",
+    filename: "vue-currency.js",
     path: path.resolve(__dirname, "dist")
   },
   devtool: "inline-source-map",
