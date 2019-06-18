@@ -1,9 +1,9 @@
 {
   "name": "@chatfoodio/vue-currency",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue currency filter",
   "author": "Gustavo Bissolli <gustavo.bissolli@gmail.com>",
-  "main": "dist/vue-test-utils.js",
+  "main": "dist/vue-currency.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
