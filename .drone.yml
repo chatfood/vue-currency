@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+- name: setup
+  image: node
+  commands:
+  - npm install
+  when:
+    event:
+    - pull_request
+
+- name: lint
+  image: node
+  commands:
+  - npm run lint
+  when:
+    event:
+    - pull_request
+
+- name: unit test
+  image: node
+  commands:
+  - npm run test -- --coverage
+  when:
+    event:
+    - pull_request
