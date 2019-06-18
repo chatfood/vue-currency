@@ -38,13 +38,7 @@ let config = {
     },
     extensions: ["*", ".js", ".vue", ".json"]
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    })
-  ],
+  plugins: [new VueLoaderPlugin(), new CleanWebpackPlugin()],
   optimization: {
     minimizer: [new UglifyJsPlugin()]
   }
@@ -55,7 +49,12 @@ if (process.env.NODE_ENV === "development") {
     entry: "./demo/main.js",
     devServer: {
       stats: "errors-only"
-    }
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./public/index.html"
+      })
+    ]
   });
 }
 
