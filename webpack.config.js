@@ -3,14 +3,19 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 const merge = require("webpack-merge");
 
 let config = {
-  mode: "development",
+  mode: process.env.NODE_ENV,
   entry: "./src/index.js",
   output: {
     filename: "vue-currency.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    library: 'VueCurrency',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    jsonpFunction: 'WebpackJsonp'
   },
   devtool: "inline-source-map",
   devServer: {
@@ -38,7 +43,7 @@ let config = {
     },
     extensions: ["*", ".js", ".vue", ".json"]
   },
-  plugins: [new VueLoaderPlugin(), new CleanWebpackPlugin()],
+  plugins: [new VueLoaderPlugin()],
   optimization: {
     minimizer: [new UglifyJsPlugin()]
   }
@@ -55,6 +60,21 @@ if (process.env.NODE_ENV === "development") {
         template: "./public/index.html"
       })
     ]
+  });
+}
+
+if (process.env.NODE_ENV === "production") {
+  config = merge(config, {
+    devtool: "#source-map",
+    plugins: [
+      new CleanWebpackPlugin(),
+      new CompressionPlugin({
+        algorithm: 'gzip'
+      })
+    ],
+    externals: {
+      "vue": "Vue"
+    },
   });
 }
 
