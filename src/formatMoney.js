@@ -18,8 +18,7 @@ const formatNumber = (number, precision, thousand, decimal) => {
     negative +
     (mod ? base.substr(0, mod) + thousand : "") +
     base.substr(mod).replace(/(\d{3})(?=\d)/g, `$1${thousand}`) +
-    decimal +
-    numberFixed.split(".")[1]
+    (precision ? decimal + numberFixed.split(".")[1] : "")
   );
 };
 

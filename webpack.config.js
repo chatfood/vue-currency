@@ -71,10 +71,7 @@ if (process.env.NODE_ENV === "production") {
       new CompressionPlugin({
         algorithm: 'gzip'
       })
-    ],
-    externals: {
-      "vue": "Vue"
-    },
+    ]
   });
 }
 

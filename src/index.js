@@ -16,8 +16,9 @@ const Currency = {
     let configs = Object.assign(defaultConfig, options);
 
     const currencyFilter = (value, params = {}) => {
-      configs = Object.assign(params, configs);
-      return masker(value, configs);
+      const customConfigs = {};
+      Object.assign(customConfigs, configs, params);
+      return masker(value, customConfigs);
     };
 
     Vue.filter("currency", currencyFilter);
