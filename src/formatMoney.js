@@ -23,7 +23,7 @@ const formatNumber = (number, precision, thousand, decimal) => {
 };
 
 const formatMoney = (number, params = {}) => {
-  number = Number.parseFloat(number);
+  number = parseFloat(number);
 
   const options = Object.assign(defaultCurrency, params);
   const formattedNumber = formatNumber(
