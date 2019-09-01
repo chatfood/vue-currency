@@ -25,7 +25,8 @@ const Currency = {
 
     Vue.prototype.$currency = Vue.currency = {
       setConfig: code => {
-        const options = { code, ...currencies[code] };
+        const options = typeof code === "object" ? code : currencies[code];
+
         configs = Object.assign(defaultConfig, options);
       },
       getConfig: () => configs
