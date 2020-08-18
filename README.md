@@ -1,3 +1,6 @@
+### **_IMPORTANT NOTE_**
+**This repository is to be considered _DEPRECATED_ and is not being used anymore inside of the ChatFood organization.**
+
 # Vue currency
 
 Developed and maintained by and for ChatFood 😉
